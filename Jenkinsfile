@@ -26,7 +26,7 @@ spec:
       steps {
         container('python') {
           sh "pip install -r requirements.txt"
-          sh "python test.py"
+          sh "python test.py --verbose"
         }
       }
     }
