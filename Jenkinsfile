@@ -1,5 +1,6 @@
 
 pipeline {
+
   agent {
     kubernetes {
       // this label will be the prefix of the generated pod's name
@@ -40,6 +41,10 @@ spec:
         path: /var/run/docker.sock
 """
     }
+  }
+  
+  triggers {
+      pollSCM('* * * * *')
   }
 
   stages {
