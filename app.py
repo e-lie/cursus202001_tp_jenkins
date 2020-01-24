@@ -12,7 +12,7 @@ def hello_user(username):
     return 'Hello %s!\n' % username
 
 @app.route('/feature/<string>') # dynamic route
-def hello_feature(string):
+def hello_feature(string):aergzregzr
     return 'Hello %s!\n' % string
 
 if __name__ == '__main__':
