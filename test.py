@@ -21,12 +21,13 @@ class TestHello(unittest.TestCase):
 
     def test_hello_name(self):
         name = 'Simon'
-        rv = self.app.get('/hello/{name}')
+        rv = self.app.get(f'/hello/{name}')
         self.assertEqual(rv.status, '200 OK')
         self.assertIn(bytearray("{name}", 'utf-8'), rv.data)
 
     def test_new_route(self):
-        rv = self.app.get('/feature/{name}')
+        name = 'Simon'
+        rv = self.app.get(f'/feature/{name}')
         self.assertEqual(rv.status, '200 OK')
 
 if __name__ == '__main__':
